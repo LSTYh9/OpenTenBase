@@ -81,11 +81,15 @@ chmod +x configure*
 make clean
 make -sj
 make install
-chmod +x contrib/pgxc_ctl/make_signature
 cd contrib
 make -sj
 make install
 ```
+
+> `make install` 完成后，集群管理工具 `opentenbase_ctl` 会被安装到
+> `${INSTALL_PATH}/opentenbase_bin_v5.0/bin/opentenbase_ctl`。该工具由
+> `contrib/opentenbase_ctl/` 编译产出，已经取代了旧版的 `pgxc_ctl`。
+> 使用说明见 `contrib/opentenbase_ctl/README.md`。
 
 ## 安装
 使用 OPENTENBASE\_CTL 工具来搭建一个集群，例如：搭建一个具有1个全局事务管理节点(GTM)、1个协调器节点(COORDINATOR)以及2个数据节点(DATANODE)的集群。

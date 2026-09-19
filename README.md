@@ -85,11 +85,15 @@ chmod +x configure*
 make clean
 make -sj
 make install
-chmod +x contrib/pgxc_ctl/make_signature
 cd contrib
 make -sj
 make install
 ```
+
+> After `make install`, the cluster management tool `opentenbase_ctl` is installed
+> under `${INSTALL_PATH}/opentenbase_bin_v5.0/bin/opentenbase_ctl`. It is built
+> from `contrib/opentenbase_ctl/` and supersedes the legacy `pgxc_ctl` tool.
+> For usage details, see `contrib/opentenbase_ctl/README.md`.
 
 ## Installation
 Use OPENTENBASE\_CTL tool to build a cluster, for example: a cluster with a global transaction management node (GTM), a coordinator(COORDINATOR) and two data nodes (DATANODE).
